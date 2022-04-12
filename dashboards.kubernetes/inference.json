@@ -203,146 +203,6 @@
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "stepBefore",
-            "lineStyle": {
-              "fill": "solid"
-            },
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 11,
-        "y": 0
-      },
-      "id": 4,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "P842975B0124E759E"
-          },
-          "exemplar": true,
-          "expr": "sum(grpc_inference_latency_bucket{service=\"inference\",le=\"1.0\"})",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "P842975B0124E759E"
-          },
-          "exemplar": true,
-          "expr": "sum(grpc_inference_latency_bucket{service=\"inference\",le=\"5.0\"})",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "B"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "P842975B0124E759E"
-          },
-          "exemplar": true,
-          "expr": "sum(grpc_inference_latency_bucket{service=\"inference\",le=\"10.0\"})",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "C"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "P842975B0124E759E"
-          },
-          "exemplar": true,
-          "expr": "sum(grpc_inference_latency_bucket{service=\"inference\",le=\"100.0\"})",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "D"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "P842975B0124E759E"
-          },
-          "exemplar": true,
-          "expr": "sum(grpc_inference_latency_bucket{service=\"inference\",le=\"+Inf\"})",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "E"
-        }
-      ],
-      "title": "Inf Latency",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "P842975B0124E759E"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
             "fillOpacity": 33,
             "gradientMode": "none",
             "hideFrom": {
@@ -390,7 +250,7 @@
         "h": 15,
         "w": 12,
         "x": 11,
-        "y": 8
+        "y": 0
       },
       "id": 6,
       "options": {
@@ -491,6 +351,1697 @@
       ],
       "title": "Average",
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 33,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 11,
+        "x": 11,
+        "y": 15
+      },
+      "id": 7,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "rate(grpc_inference_latency_sum[1m]) /rate(grpc_inference_latency_count[1m])",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "ㅇㅇ",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 33,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 16,
+        "w": 11,
+        "x": 0,
+        "y": 23
+      },
+      "id": 8,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "rate(inference_actor_to_data_store_inf_latency_sum[1m]) /rate(inference_actor_to_data_store_inf_latency_count[1m])",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        }
+      ],
+      "title": "inf actor to data store ",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 33,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 11,
+        "x": 11,
+        "y": 29
+      },
+      "id": 9,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "rate(data_store_loop_to_pulsar_broker_get_latency_sum[1m]) /rate(data_store_loop_to_pulsar_broker_get_latency_count[1m])",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "data to pulsar",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 33,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 11,
+        "x": 0,
+        "y": 39
+      },
+      "id": 10,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "rate(pulsar_loop_to_inf_loop_end_latency_sum[1m]) /rate(pulsar_loop_to_inf_loop_end_latency_count[1m])",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "pulsar to inf ",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 33,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 11,
+        "x": 11,
+        "y": 41
+      },
+      "id": 11,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "rate(inf_loop_to_bridge_inference_latency_sum[1m]) /rate(inf_loop_to_bridge_inference_latency_count[1m])",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "inf to bridge",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 33,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 11,
+        "x": 0,
+        "y": 52
+      },
+      "id": 12,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "rate(bridge_to_inf_loop_inf_result_latency_sum[1m]) /rate(bridge_to_inf_loop_inf_result_latency_count[1m])",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "bridge to inf",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 33,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 11,
+        "x": 11,
+        "y": 55
+      },
+      "id": 13,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "rate(data_store_to_grpc_inference_latency_sum[1m]) /rate(data_store_to_grpc_inference_latency_count[1m])",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "data to grpc",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "stepBefore",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 0,
+        "y": 69
+      },
+      "id": 4,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(grpc_inference_latency_bucket{service=\"inference\",le=\"1.0\"})",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(grpc_inference_latency_bucket{service=\"inference\",le=\"5.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(grpc_inference_latency_bucket{service=\"inference\",le=\"10.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(grpc_inference_latency_bucket{service=\"inference\",le=\"20.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "F"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(grpc_inference_latency_bucket{service=\"inference\",le=\"100.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(grpc_inference_latency_bucket{service=\"inference\",le=\"+Inf\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "E"
+        }
+      ],
+      "title": "Inf Latency",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "stepBefore",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 12,
+        "y": 69
+      },
+      "id": 14,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(inference_actor_to_data_store_inf_latency_bucket{service=\"inference\",le=\"+Inf\"})",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "1"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(inference_actor_to_data_store_inf_latency_bucket{service=\"inference\",le=\"100.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "2"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(inference_actor_to_data_store_inf_latency_bucket{service=\"inference\",le=\"10.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "3"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(inference_actor_to_data_store_inf_latency_bucket{service=\"inference\",le=\"5.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "4"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(inference_actor_to_data_store_inf_latency_bucket{service=\"inference\",le=\"1.0\"})",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "5"
+        }
+      ],
+      "title": "inf to data",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "stepBefore",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 0,
+        "y": 81
+      },
+      "id": 15,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(data_store_loop_to_pulsar_broker_get_latency_bucket{service=\"inference\",le=\"+Inf\"})",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "1"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(data_store_loop_to_pulsar_broker_get_latency_bucket{service=\"inference\",le=\"100.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "2"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(data_store_loop_to_pulsar_broker_get_latency_bucket{service=\"inference\",le=\"10.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "3"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(data_store_loop_to_pulsar_broker_get_latency_bucket{service=\"inference\",le=\"5.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "4"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(data_store_loop_to_pulsar_broker_get_latency_bucket{service=\"inference\",le=\"1.0\"})",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "5"
+        }
+      ],
+      "title": "data to pulsar",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "stepBefore",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 12,
+        "y": 81
+      },
+      "id": 16,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(pulsar_loop_to_inf_loop_end_latency_bucket{service=\"inference\",le=\"+Inf\"})",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "1"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(pulsar_loop_to_inf_loop_end_latency_bucket{service=\"inference\",le=\"100.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "2"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(pulsar_loop_to_inf_loop_end_latency_bucket{service=\"inference\",le=\"20.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(pulsar_loop_to_inf_loop_end_latency_bucket{service=\"inference\",le=\"10.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "3"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(pulsar_loop_to_inf_loop_end_latency_bucket{service=\"inference\",le=\"5.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "4"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(pulsar_loop_to_inf_loop_end_latency_bucket{service=\"inference\",le=\"1.0\"})",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "5"
+        }
+      ],
+      "title": "pulsar to inf ",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "stepBefore",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 0,
+        "y": 93
+      },
+      "id": 18,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(inf_loop_to_bridge_inference_latency_bucket{service=\"inference\",le=\"+Inf\"})",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "1"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(inf_loop_to_bridge_inference_latency_bucket{service=\"inference\",le=\"100.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "2"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(inf_loop_to_bridge_inference_latency_bucket{service=\"inference\",le=\"20.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(inf_loop_to_bridge_inference_latency_bucket{service=\"inference\",le=\"10.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "3"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(inf_loop_to_bridge_inference_latency_bucket{service=\"inference\",le=\"5.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "4"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(inf_loop_to_bridge_inference_latency_bucket{service=\"inference\",le=\"1.0\"})",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "5"
+        }
+      ],
+      "title": "inf to bridge",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "stepBefore",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 12,
+        "y": 93
+      },
+      "id": 17,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(bridge_to_inf_loop_inf_result_latency_bucket{service=\"inference\",le=\"+Inf\"})",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "1"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(bridge_to_inf_loop_inf_result_latency_bucket{service=\"inference\",le=\"100.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "2"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(bridge_to_inf_loop_inf_result_latency_bucket{service=\"inference\",le=\"20.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(bridge_to_inf_loop_inf_result_latency_bucket{service=\"inference\",le=\"10.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "3"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(bridge_to_inf_loop_inf_result_latency_bucket{service=\"inference\",le=\"5.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "4"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(bridge_to_inf_loop_inf_result_latency_bucket{service=\"inference\",le=\"1.0\"})",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "5"
+        }
+      ],
+      "title": "bridge to inf",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P842975B0124E759E"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "stepBefore",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 0,
+        "y": 105
+      },
+      "id": 19,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(data_store_to_grpc_inference_latency_bucket{service=\"inference\",le=\"+Inf\"})",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "1"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(data_store_to_grpc_inference_latency_bucket{service=\"inference\",le=\"100.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "2"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(data_store_to_grpc_inference_latency_bucket{service=\"inference\",le=\"20.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(data_store_to_grpc_inference_latency_bucket{service=\"inference\",le=\"10.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "3"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(data_store_to_grpc_inference_latency_bucket{service=\"inference\",le=\"5.0\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "4"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "P842975B0124E759E"
+          },
+          "exemplar": true,
+          "expr": "sum(data_store_to_grpc_inference_latency_bucket{service=\"inference\",le=\"1.0\"})",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "5"
+        }
+      ],
+      "title": "data to grpc",
+      "type": "timeseries"
     }
   ],
   "refresh": false,
@@ -501,13 +2052,13 @@
     "list": []
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Inference",
   "uid": "aR9HLAU7k",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
